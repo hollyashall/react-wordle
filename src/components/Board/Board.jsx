@@ -1,35 +1,37 @@
 import React from "react";
 import "./Board.scss";
+import { useState } from "react";
+import Row from "../Row/Row";
+const Board = ({ word, wordGuess }) => {
+  const [guess, setGuess] = useState([]);
+  const [guesses, setGuesses] = useState([]);
 
-const Board = ({ word }) => {
-  
   const letterArr = word.toString().split("");
- 
+  const letterArrWordGuess = wordGuess.toString().split("");
+
+  console.log(letterArr);
+  console.log(letterArrWordGuess);
+  console.log(word);
+
+  const submitGuess = () => {
+    // 2. Add a guess to the guesses array when you push the button :)
+    guesses.push(letterArrWordGuess);
+    console.log(guesses);
+    setGuesses([...guesses]);
+  };
 
   return (
     <>
-      <div className="container">
-        <div className="item">1</div>
-        <div className="item">2</div>
-        <div className="item">3</div>
-        <div className="item">4</div>
-        <div className="item">5</div>
-        <div className="item">6</div>
-        <div className="item">6</div>
-        <div className="item">6</div>
-        <div className="item">6</div>
-        <div className="item">4</div>
-        <div className="item">5</div>
-        <div className="item">6</div>
-        <div className="item">6</div>
-        <div className="item">6</div>
-        <div className="item">6</div>
-        <div className="item">{letterArr[0]}</div>
-        <div className="item">{letterArr[1]}</div>
-        <div className="item">{letterArr[2]}</div>
-        <div className="item">{letterArr[3]}</div>
-        <div className="item">{letterArr[4]}</div>
-      </div>
+      <button onClick={submitGuess}>submit guess</button>
+      {guesses.map((guess) => {
+        return <Row guess={guess} letterArr={letterArr}></Row>;
+      })}
+
+      <div className=" item correct">{letterArr[0]}</div>
+      <div className="item correct">{letterArr[1]}</div>
+      <div className="item correct">{letterArr[2]}</div>
+      <div className=" item correct">{letterArr[3]}</div>
+      <div className="item correct">{letterArr[4]}</div>
     </>
   );
 };
