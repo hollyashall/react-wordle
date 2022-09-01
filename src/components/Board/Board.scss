@@ -1,33 +1,44 @@
+
+
+
 .container{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  // grid-template-rows: repeat(4, 1fr);
+  // grid-template-rows: repeat(6, 1fr);
   gap:1rem;
   font-size: x-large;
+  justify-content: center;
 
-
+}
 
 .item{
-  display: flex;
-  justify-content: center;
-align-items: center;
+  // display: grid;
+  // grid-template-columns: repeat(5, 1fr);
+  
+ 
   width: 4.2rem;
   height: 4.5rem;
   border: 3.5px solid gray;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
  
 
 
-}}
-
+}
 .correct{
-  background-color: rgb(116, 228, 116);
+  background-color: #6aaa64;
+  justify-content: center;
 }
 
 .includedLetter{
-  background-color: rgb(227, 227, 79);
+  background-color: #c9b458;
 }
 
-// .incorrect{
-//   background-color: lightgray;
-// }
+.button{
+  min-width: 80px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  gap: 2rem;
+}

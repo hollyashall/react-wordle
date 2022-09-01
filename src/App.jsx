@@ -2,7 +2,7 @@ import "./App.scss";
 import { useState } from "react";
 import React from "react";
 import Board from "./components/Board/Board";
-import Word from "./containers/Word";
+import Timer from "./components/Timer/Timer";
 
 const App = () => {
   const [word, setWords] = useState("");
@@ -19,9 +19,6 @@ const App = () => {
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setWordGuess(cleanInput);
-
-  
-
   };
   console.log(wordGuess);
 
@@ -29,19 +26,21 @@ const App = () => {
     <>
       <main className="App">
         <h1>WORDLE</h1>
-        <button onClick={getWords}>Click here for word</button>
+        <Timer/>
+        <button className="button" onClick={getWords}>Click here for word</button>
         <p>Type word below! </p>
 
         <input
-        maxlength="5"
+          maxlength="5"
           type="text"
           placeholder="type 5 letter word here"
           onInput={handleInput}
-          
         />
 
-        <Word word={word} />
-        <Board word={word} wordGuess={wordGuess} />
+  
+  <Board  word={word} wordGuess={wordGuess} />
+
+       
       </main>
     </>
   );

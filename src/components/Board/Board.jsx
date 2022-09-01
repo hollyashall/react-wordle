@@ -5,6 +5,9 @@ import Row from "../Row/Row";
 const Board = ({ word, wordGuess }) => {
   const [guess, setGuess] = useState([]);
   const [guesses, setGuesses] = useState([]);
+  const [showAnswer, setShowAnswer] = useState(false);
+  console.log(guess);
+  console.log(guesses);
 
   const letterArr = word.toString().split("");
   const letterArrWordGuess = wordGuess.toString().split("");
@@ -20,18 +23,33 @@ const Board = ({ word, wordGuess }) => {
     setGuesses([...guesses]);
   };
 
+  const toggleAnswer = (event) => {
+    setShowAnswer(!showAnswer);
+  };
+
   return (
     <>
-      <button onClick={submitGuess}>submit guess</button>
-      {guesses.map((guess) => {
-        return <Row guess={guess} letterArr={letterArr}></Row>;
-      })}
+    <div className="buttons">
+      <button className="button" onClick={submitGuess}>submit guess</button>
+      <button className="button">Get a hint</button>
+      <button className="button" onClick={toggleAnswer}>Show/Hide answer</button>
+      </div>
+      <p>letters already used: {guesses}</p>
+      <div className="board">
+        {guesses.map((guess) => {
+          return <Row guess={guess} letterArr={letterArr}></Row>;
+        })}
 
-      <div className=" item correct">{letterArr[0]}</div>
-      <div className="item correct">{letterArr[1]}</div>
-      <div className="item correct">{letterArr[2]}</div>
-      <div className=" item correct">{letterArr[3]}</div>
-      <div className="item correct">{letterArr[4]}</div>
+        {showAnswer && (
+          <div className="container">
+            <div className="item correct">{letterArr[0]}</div>
+            <div className="item correct">{letterArr[1]}</div>
+            <div className="item correct">{letterArr[2]}</div>
+            <div className="item correct">{letterArr[3]}</div>
+            <div className="item correct">{letterArr[4]}</div>
+          </div>
+        )}
+      </div>
     </>
   );
 };
