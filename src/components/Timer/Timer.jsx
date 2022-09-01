@@ -24,6 +24,7 @@ const Timer = () => {
     }
     return () => clearInterval(interval);
   }, [isActive, seconds]);
+  
 return (
   <div className="app">
     <div className="time">

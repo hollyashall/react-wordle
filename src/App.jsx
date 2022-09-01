@@ -1,5 +1,5 @@
 import "./App.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import Board from "./components/Board/Board";
 import Timer from "./components/Timer/Timer";
@@ -16,6 +16,10 @@ const App = () => {
       });
   };
 
+useEffect(() => {
+getWords()
+}, [])
+
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setWordGuess(cleanInput);
@@ -27,8 +31,8 @@ const App = () => {
       <main className="App">
         <h1>WORDLE</h1>
         <Timer/>
-        <button className="button" onClick={getWords}>Click here for word</button>
-        <p>Type word below! </p>
+        <button className="button" onClick={getWords}>Click here for New word</button>
+        <p>Type 5 letter word below! Do not repeat letters </p>
 
         <input
           maxlength="5"
@@ -37,9 +41,9 @@ const App = () => {
           onInput={handleInput}
         />
 
-  
-  <Board  word={word} wordGuess={wordGuess} />
 
+  <Board  word={word} wordGuess={wordGuess} />
+  
        
       </main>
     </>
