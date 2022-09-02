@@ -16,9 +16,9 @@ const App = () => {
       });
   };
 
-useEffect(() => {
-getWords()
-}, [])
+  useEffect(() => {
+    getWords();
+  }, []);
 
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
@@ -26,19 +26,20 @@ getWords()
   };
   console.log(wordGuess);
 
-
   const toggleInfo = () => {
     setShowInfo(!showInfo);
-  }
+  };
 
   return (
     <>
       <main className="App">
-        {showInfo && (<Info/>)}
-        <button onClick={toggleInfo}>?</button>
+        {showInfo && <Info />}
+        <button onClick={toggleInfo} className="button">?</button>
         <h1>WORDLE</h1>
-        <Timer/>
-        <button className="button" onClick={getWords}>Click here for New word</button>
+        <Timer />
+        <button className="button" onClick={getWords}>
+          Click here for New word
+        </button>
         <p>Type 5 letter word below! Do not repeat letters </p>
 
         <input
@@ -48,10 +49,7 @@ getWords()
           onInput={handleInput}
         />
 
-
-  <Board  word={word} wordGuess={wordGuess} />
-  
-       
+        <Board word={word} wordGuess={wordGuess} />
       </main>
     </>
   );

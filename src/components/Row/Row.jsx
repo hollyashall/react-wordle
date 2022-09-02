@@ -8,27 +8,24 @@ const row = ({ guess, letterArr, guesses }) => {
         // 1. Go through our array of guesses
         guess.map((letter, index) => {
           let className = "item";
-
-          // if (guess.length < 5) {
-          //   console.log("too short");
-          // } else if (guesses.includes(guess)) {
-          //   console.log("You cannot repeat words!");
-          // } else if
+          console.log(guesses);
+          console.log(guess);
           if (letterArr[index] === guess[index]) {
             console.log("the same");
             className += " correct";
-          }
-           else if (letterArr.includes(letter)) {
+          } else if (letterArr.includes(letter)) {
             console.log(true);
             className += " includedLetter";
-          } else  {
+          } else if (letterArr) {
             console.log(false);
             className += " incorrectLetter";
+          } else if (guesses.includes(guess)) {
+            console.log("You cannot repeat words!");
+            className += " included";
           }
-          
+          // 5 letter word
 
-          return <div className={className}>{letter.toUpperCase()}</div>
-          ;
+          return <div className={className}>{letter.toUpperCase()}</div>;
         })
       }
     </div>

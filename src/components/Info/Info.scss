@@ -1,9 +1,12 @@
-.container{
+.Info-container{
   background-color: black;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  width:80%;
+  margin:5rem;
+  // height:70%;
   // width: 80%;
   // margin: 2rem;
 
@@ -16,6 +19,15 @@
     font-size: medium;
   }
 
+  &__text{
+    height: 90%;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+  }
   &__example{
     height: 15rem;
     width: 15rem;

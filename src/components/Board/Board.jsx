@@ -35,6 +35,15 @@ showGrid()
     setGuesses([...guesses]);
   };
 
+  //replace a row array - over-ride
+
+
+// const myNames = ["Andy", "holly", "Kirsty"];
+
+// console.log(myNames[1]) // Access an element in an array
+
+// myNames[2] = "Stu"; // overwrite an element in an array
+
   const toggleAnswer = (event) => {
     setShowAnswer(!showAnswer);
   };
@@ -52,7 +61,7 @@ showGrid()
 
       <div className="board">
         {guesses.map((guess) => {
-          return <Row guess={guess} letterArr={letterArr} guesses={guesses}></Row>;
+          return <Row guess={guess} letterArr={letterArr} guesses={guesses} ></Row>;
         })}
 
         {showAnswer && (

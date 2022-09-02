@@ -6,9 +6,9 @@ const Info = () => {
  
 
   return (
-    <div className="container">
-      <div className="container__content">
-    <p>
+    <div className="Info-container">
+      <div className="Info-container__content">
+    <p className="Info-container__text">
     Guess the WORDLE in 6 tries.
 
 Each guess must be a valid 5-letter word. Hit the enter button to submit.
@@ -17,7 +17,7 @@ After each guess, the color of the tiles will change to show how close your gues
 
 
     </p>
-    <img className="container__example" src={example} alt="example" />
+    <img className="Info-container__example" src={example} alt="example" />
     </div>
     </div>
   )
