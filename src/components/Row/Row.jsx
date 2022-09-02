@@ -27,7 +27,7 @@ const row = ({ guess, letterArr, guesses }) => {
           }
           
 
-          return <div className={className}>{letter}</div>
+          return <div className={className}>{letter.toUpperCase()}</div>
           ;
         })
       }

@@ -62,11 +62,11 @@ showGrid()
             <p className="item"></p>
             <p className="item"></p>
             <p className="item"></p> */}
-            <div className="item correct">{letterArr[0]}</div>
-            <div className="item correct">{letterArr[1]}</div>
-            <div className="item correct">{letterArr[2]}</div>
-            <div className="item correct">{letterArr[3]}</div>
-            <div className="item correct">{letterArr[4]}</div>
+            <div className="item correct">{letterArr[0].toUpperCase()}</div>
+            <div className="item correct">{letterArr[1].toUpperCase()}</div>
+            <div className="item correct">{letterArr[2].toUpperCase()}</div>
+            <div className="item correct">{letterArr[3].toUpperCase()}</div>
+            <div className="item correct">{letterArr[4].toUpperCase()}</div>
           </div>
         )}
       </div>

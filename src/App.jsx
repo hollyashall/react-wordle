@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import React from "react";
 import Board from "./components/Board/Board";
 import Timer from "./components/Timer/Timer";
-
+import Info from "./components/Info/Info";
 const App = () => {
   const [word, setWords] = useState("");
   const [wordGuess, setWordGuess] = useState([]);
-
+  const [showInfo, setShowInfo] = useState(false);
   const getWords = () => {
     fetch("https://random-word-api.herokuapp.com/word?length=5")
       .then((response) => response.json())
@@ -26,9 +26,16 @@ getWords()
   };
   console.log(wordGuess);
 
+
+  const toggleInfo = () => {
+    setShowInfo(!showInfo);
+  }
+
   return (
     <>
       <main className="App">
+        {showInfo && (<Info/>)}
+        <button onClick={toggleInfo}>?</button>
         <h1>WORDLE</h1>
         <Timer/>
         <button className="button" onClick={getWords}>Click here for New word</button>

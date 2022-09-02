@@ -1,0 +1,23 @@
+.container{
+  background-color: black;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 80%;
+  // margin: 2rem;
+
+  &__content {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+  }
+
+  &__example{
+    height: 15rem;
+    width: 15rem;
+  }
+}
