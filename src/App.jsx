@@ -1,9 +1,9 @@
 import "./App.scss";
 import { useState, useEffect } from "react";
 import React from "react";
-import Board from "./components/Board/Board";
-import Timer from "./components/Timer/Timer";
-import Info from "./components/Info/Info";
+import Board from "./components/Board/Board.jsx";
+import Timer from "./components/Timer/Timer.jsx";
+import Info from "./components/Info/Info.jsx";
 const App = () => {
   const [word, setWords] = useState("");
   const [wordGuess, setWordGuess] = useState([]);

@@ -1,11 +1,9 @@
 import React from "react";
 
-// Destructure the props object to get the two values "letterArrWordGuess", "letterArr"
 const row = ({ guess, letterArr, guesses }) => {
   return (
     <div className="container">
       {
-        // 1. Go through our array of guesses
         guess.map((letter, index) => {
           let className = "item";
           console.log(guesses);
@@ -23,7 +21,7 @@ const row = ({ guess, letterArr, guesses }) => {
             console.log("You cannot repeat words!");
             className += " included";
           }
-          // 5 letter word
+      
 
           return <div className={className}>{letter.toUpperCase()}</div>;
         })

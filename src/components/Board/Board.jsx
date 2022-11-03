@@ -3,25 +3,18 @@ import "./Board.scss";
 import { useState } from "react";
 import Row from "../Row/Row";
 const Board = ({ word, wordGuess }) => {
-  const [guess, setGuess] = useState([]);
+
+ 
   const [guesses, setGuesses] = useState([]);
   const [showAnswer, setShowAnswer] = useState(false);
 
 
 
-
-  console.log(guess);
-  console.log(guesses);
-
   const letterArr = word.toString().split("");
   const letterArrWordGuess = wordGuess.toString().split("");
 
 const guessesLetters = guesses.toString();
-console.log(guessesLetters);
 
-  console.log(letterArr);
-  console.log(letterArrWordGuess);
-  console.log(word);
 
 const showGrid =() => {
 
@@ -29,20 +22,11 @@ const showGrid =() => {
 showGrid()
 
   const submitGuess = () => {
-    // 2. Add a guess to the guesses array when you push the button :)
+
     guesses.push(letterArrWordGuess);
     console.log(guesses);
     setGuesses([...guesses]);
   };
-
-  //replace a row array - over-ride
-
-
-// const myNames = ["Andy", "holly", "Kirsty"];
-
-// console.log(myNames[1]) // Access an element in an array
-
-// myNames[2] = "Stu"; // overwrite an element in an array
 
   const toggleAnswer = (event) => {
     setShowAnswer(!showAnswer);
@@ -66,11 +50,7 @@ showGrid()
 
         {showAnswer && (
           <div className="container">
-            {/* <p className="item"></p>
-            <p className="item"></p>
-            <p className="item"></p>
-            <p className="item"></p>
-            <p className="item"></p> */}
+    
             <div className="item correct">{letterArr[0].toUpperCase()}</div>
             <div className="item correct">{letterArr[1].toUpperCase()}</div>
             <div className="item correct">{letterArr[2].toUpperCase()}</div>
